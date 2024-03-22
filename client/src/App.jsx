@@ -6,13 +6,16 @@ import Wishlist from "./Pages/Wishlist";
 import Blog from "./Pages/Blog";
 import Cart from "./Pages/Cart";
 import About from "./Pages/About";
-
+import Navbar from "./Components/Navbar";
 function App() {
   return (
     <>
       <Router>
-        <Home />
+        <Navbar />
+        {/* <Home /> */}
         <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/Contact" element={<Contect />} />
           <Route path="/shop" element={<Shop />} />
