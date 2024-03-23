@@ -10,7 +10,9 @@ const Navbar = () => {
     <>
       <div className="navbar h-[15vh] shadow-lg shadow-gray-400  w-full flex items-center p-10 justify-between bg-[#F1F1F1]">
         <div className="left w-[100px]">
-          <img src={img} alt="" loading="lazy" />
+          <Link to={"/"}>
+            <img src={img} alt="logo" loading="lazy" />
+          </Link>
         </div>
         <div className="w-[350px] h-[40px]   overflow-hidden flex items-center justify-between">
           <input
