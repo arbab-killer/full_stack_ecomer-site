@@ -19,7 +19,6 @@ const Navbar = () => {
             className="h-full border-2 w-full   font-serif rounded-tl-[13px] p-4 text-xl rounded-bl-[13px] bottom-black-1"
             type="text"
             placeholder="Search"
-            onFocus={() => console.log("object")}
             name="quary"
           />
           {/* <div className="w-[350px] h-[40vh]  absolute bg-red-500"></div> */}
@@ -35,7 +34,7 @@ const Navbar = () => {
               return (
                 <li key={index} className="relative">
                   <Link
-                    className="text-xl font-medium hover:after:contents[''] after:transition-all  after:transition-duration-1000 ease-in after:bg-cyan-700 hover:after:w-1/2 after:h-[3px] after:absolute after:bottom-0 after:left-0 font-sans hover:cursor-pointer hover:text-green-700"
+                    className="text-xl font-medium hover:after:contents[''] after:transition-all  after:transition-duration-1000 ease-in after:bg-gradient-to-tr hover:after:w-1/2 after:h-[3px] after:absolute after:bottom-0 after:left-0 font-sans hover:cursor-pointer hover:text-transparent hover:bg-clip-text  hover:bg-gradient-to-t from-blue-600 to-red-500 "
                     to={`/${item}`}
                   >
                     {item}

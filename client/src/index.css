@@ -12,6 +12,7 @@ Font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
 html,body{
 Width:100%;
 Height:100%;
+
 }
 @layer utilities {
     /* Hide scrollbar for Chrome, Safari and Opera */

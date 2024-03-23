@@ -38,7 +38,7 @@ const Features = () => {
         {features.map((item, index) => {
           return (
             <div
-              className=" p-4  max-w-[13rem] min-w-[12rem] h-[15rem] bg-[#f8f6f6dc] border-black border-[1.5px] rounded-lg transition-all ease-in  hover:shadow-md hover:shadow-gray-600"
+              className=" p-4  max-w-[13rem] min-w-[12rem] h-[15rem] bg-[#f8f6f6dc] border-black border-[1.5px] rounded-lg transition-all ease-in  hover:shadow-md shadow-gray-600"
               key={index}
             >
               <img
@@ -55,6 +55,7 @@ const Features = () => {
           );
         })}
       </div>
+      <hr className=" ml-5 h-[2px] bg-[#2b1f19]  m-5" />
     </>
   );
 };
