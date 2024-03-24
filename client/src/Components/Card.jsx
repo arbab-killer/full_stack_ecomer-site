@@ -21,60 +21,76 @@ const Card = ({ productUrl, productName, productPrice, productRating }) => {
               case 1:
                 return (
                   <>
-                    <IoStarSharp  color="orange"  />
+                    <IoStarSharp color="orange" />
                   </>
                 );
               case 1.5:
                 return (
                   <>
-                    <IoStarSharp  color="orange"/> <IoIosStarHalf color="orange" />
+                    <IoStarSharp color="orange" />{" "}
+                    <IoIosStarHalf color="orange" />
                   </>
                 );
               case 2:
                 return (
                   <>
-                    <IoStarSharp  color="orange"/> <IoStarSharp color="orange" />
+                    <IoStarSharp color="orange" />{" "}
+                    <IoStarSharp color="orange" />
                   </>
                 );
               case 2.5:
                 return (
                   <>
-                    <IoStarSharp color="orange" /> <IoStarSharp color="orange" /> <IoIosStarHalf color="orange" />
+                    <IoStarSharp color="orange" />{" "}
+                    <IoStarSharp color="orange" />{" "}
+                    <IoIosStarHalf color="orange" />
                   </>
                 );
               case 3:
                 return (
                   <>
-                    <IoStarSharp color="orange" /> <IoStarSharp color="orange" /> <IoStarSharp color="orange" />
+                    <IoStarSharp color="orange" />{" "}
+                    <IoStarSharp color="orange" />{" "}
+                    <IoStarSharp color="orange" />
                   </>
                 );
-                
+
               case 3.5:
                 return (
                   <>
-                    <IoStarSharp  color="orange"/> <IoStarSharp  color="orange"/> <IoStarSharp color="orange" />{" "}
+                    <IoStarSharp color="orange" />{" "}
+                    <IoStarSharp color="orange" />{" "}
+                    <IoStarSharp color="orange" />{" "}
                     <IoIosStarHalf color="orange" />
                   </>
                 );
               case 4:
                 return (
                   <>
-                    <IoStarSharp color="orange" /> <IoStarSharp color="orange"p /> <IoStarSharp color="orange" />{" "}
-                    <IoStarSharp  color="orange"/>
+                    <IoStarSharp color="orange" />{" "}
+                    <IoStarSharp color="orange" p />{" "}
+                    <IoStarSharp color="orange" />{" "}
+                    <IoStarSharp color="orange" />
                   </>
                 );
               case 4.5:
                 return (
                   <>
-                    <IoStarSharp color="orange" /> <IoStarSharp color="orange" /> <IoStarSharp color="orange" />{" "}
-                    <IoStarSharp color="orange" /> <IoIosStarHalf color="orange" />
+                    <IoStarSharp color="orange" />{" "}
+                    <IoStarSharp color="orange" />{" "}
+                    <IoStarSharp color="orange" />{" "}
+                    <IoStarSharp color="orange" />{" "}
+                    <IoIosStarHalf color="orange" />
                   </>
                 );
               case 5:
                 return (
                   <>
-                    <IoStarSharp color="orange" /> <IoStarSharp color="orange" /> <IoStarSharp color="orange" />{" "}
-                    <IoStarSharp  color="orange"/> <IoStarSharp  color="orange"/>
+                    <IoStarSharp color="orange" />{" "}
+                    <IoStarSharp color="orange" />{" "}
+                    <IoStarSharp color="orange" />{" "}
+                    <IoStarSharp color="orange" />{" "}
+                    <IoStarSharp color="orange" />
                   </>
                 );
             }
@@ -89,6 +105,7 @@ const Card = ({ productUrl, productName, productPrice, productRating }) => {
           </div>
         </div>
       </div>
+      
     </>
   );
 };

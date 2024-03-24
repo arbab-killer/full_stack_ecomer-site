@@ -5,6 +5,8 @@ export default {
     extend: {
       backgroundImage: {
         "hero-pattern": "url('./src/assets/post3.png')",
+        "banner-pattern": "url('./src/assets/banner.jpg')",
+        "banner-pattern-r": "url('./src/assets/div-img.png')",
       },
     },
   },
