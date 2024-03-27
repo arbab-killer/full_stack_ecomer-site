@@ -12,7 +12,7 @@ const Banner = () => {
       </div>
 
       <div className="banner  h-[80vh] p-10 gap-[2vw] flex-wrap flex justify-between items-center w-full ">
-        <div className="right rounded-md relative w-[48%] h-full bg-banner-pattern-r bg-no-repeat bg-right-top  bg-[#ED7B4E]  ">
+        <div className="right rounded-md relative min-w-[48%] h-full bg-banner-pattern-r bg-no-repeat bg-right-top  bg-[#ED7B4E]  ">
           <div className="p-10 absolute bottom-2">
             <h3 className="text-3xl font-sans font-bold text-white ">
               Crazy Deal{" "}
@@ -26,7 +26,7 @@ const Banner = () => {
             <Btn />
           </div>
         </div>
-        <div className="left rounded-md relative w-[48%]  bg-contain h-full bg-banner-pattern ">
+        <div className="left rounded-md relative min-w-[48%] bg-no-repeat md:bg-cover  bg-contain h-full bg-banner-pattern ">
           <div className="p-10 absolute bottom-1">
             <h3 className="text-3xl font-sans font-bold text-slate-600">
               Spring/Sammar{" "}
