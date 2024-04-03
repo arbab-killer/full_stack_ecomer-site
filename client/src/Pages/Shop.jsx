@@ -3,21 +3,21 @@ import Card from "../Components/Card";
 const Shop = () => {
   const productsdata = [
     {
-      id: 3,
+      id: 1,
       name: "Product 3",
       url: "https://picsum.photos/200/300",
       price: "$300",
       rating: 1,
     },
     {
-      id: 3,
+      id: 2,
       name: "Product 3",
       url: "https://picsum.photos/200/300",
       price: "$300",
       rating: 1.2,
     },
     {
-      id: 4,
+      id: 3,
       name: "Product 4",
       url: "https://picsum.photos/200/300",
       price: "$400",
@@ -31,35 +31,35 @@ const Shop = () => {
       rating: 2.5,
     },
     {
-      id: 4,
+      id: 5,
       name: "Product 4",
       url: "https://picsum.photos/200/300",
       price: "$400",
       rating: 3,
     },
     {
-      id: 4,
+      id: 6,
       name: "Product 4",
       url: "https://picsum.photos/200/300",
       price: "$400",
       rating: 3.5,
     },
     {
-      id: 4,
+      id: 7,
       name: "Product 4",
       url: "https://picsum.photos/200/300",
       price: "$400",
       rating: 4,
     },
     {
-      id: 4,
+      id: 8,
       name: "Product 4",
       url: "https://picsum.photos/200/300",
       price: "$400",
       rating: 4.5,
     },
     {
-      id: 4,
+      id: 9,
       name: "Product 4",
       url: "https://picsum.photos/200/300",
       price: "$400",
@@ -80,6 +80,7 @@ const Shop = () => {
           return (
             <Card
               key={data.id}
+              id={data.id}
               productUrl={data.url}
               productName={data.name}
               productPrice={data.price}

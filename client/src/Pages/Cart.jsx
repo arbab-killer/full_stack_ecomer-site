@@ -1,8 +1,15 @@
-
+import { useContext, useEffect, useState } from "react";
+import { Context } from "../Context";
 const Cart = () => {
-  return (
-    <div>Cart</div>
-  )
-}
+  const { token, settoken } = useContext(Context);
+  const [isverfy, setisverfy] = useState(false);
+  useEffect(() => {
+    if (token) {
+      setisverfy(true);
+    }
+  }, [token, settoken]);
 
-export default Cart
+  return <>{isverfy && <div>Cart</div>}</>;
+};
+
+export default Cart;

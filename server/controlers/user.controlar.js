@@ -3,7 +3,7 @@ import User from "../models/user.model.js";
 import { generateToken } from "../servesies/jwtcontrlar.js";
 const userSignup = async (req, res) => {
   const { name, email, password ,phone,address } = req.body;
-  if (!(name && email && password && phone)) {
+  if (!(name && email && password && phone && address)) {
     return res.status(400).json({
       success: false,
       message: "All fields are required",
@@ -11,7 +11,7 @@ const userSignup = async (req, res) => {
   }
   try {
     //check if user exist
-    const user = await User.findOne({ email }).select("-isAdmin -password");
+    const user = await User.findOne({ email })
     if (user) {
       return res.status(409).json({
         success: false,
@@ -37,7 +37,6 @@ const userSignup = async (req, res) => {
       return res.status(201).json({
         success: true,
         message: "User created successfully",
-        data: dbuser,
         token: "token " + token,
       });
     }

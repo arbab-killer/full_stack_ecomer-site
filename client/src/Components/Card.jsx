@@ -1,9 +1,10 @@
 import { IoCart, IoStarSharp } from "react-icons/io5";
 import { IoIosStarHalf } from "react-icons/io";
+import { Link } from "react-router-dom";
 
-const Card = ({ productUrl, productName, productPrice, productRating }) => {
+const Card = ({ productUrl, id, productName, productPrice, productRating }) => {
   return (
-    <>
+    <Link to={`/products/${id}`}>
       <div className="h-[330px] w-[230px] p-4  rounded-md hover:shadow-xl hover:shadow-gray-600 transition-all ease-in duration-100 bg-white border-2 border-black">
         <div className="imgdiv mb-1  w-full h-[60%]  ">
           <img
@@ -105,8 +106,7 @@ const Card = ({ productUrl, productName, productPrice, productRating }) => {
           </div>
         </div>
       </div>
-      
-    </>
+    </Link>
   );
 };
 

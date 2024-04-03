@@ -2,32 +2,24 @@ import img from "../assets/logo.png";
 import { IoCart } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { IoMdHeart } from "react-icons/io";
-import { LuSearch } from "react-icons/lu";
-
+import Search from "./Search";
+import { Context } from "../Context";
+import { useContext } from "react";
+import toast from "react-hot-toast";
 const Navbar = () => {
-  const nagationtext = ["Home", "Shop", "Blog", "About", "Contact"];
+  const { token ,settoken } = useContext(Context);
+  
+  const nagationtext = ["Home", "Shop", "Blog", "About", "Contact Us"];
   return (
     <>
       <div className="navbar h-[15vh] shadow-lg shadow-gray-400  w-full flex items-center p-10 justify-between bg-[#F1F1F1]">
         <div className="left w-[100px]">
-          <Link to={"/"}>
+          <Link to={"/count"}>
             <img src={img} alt="logo" loading="lazy" />
           </Link>
         </div>
-        <div className="w-[350px] h-[40px]   overflow-hidden flex items-center justify-between">
-          <input
-            className="h-full border-2 w-full   font-serif rounded-tl-[13px] p-4 text-xl rounded-bl-[13px] bottom-black-1"
-            type="text"
-            placeholder="Search"
-            name="quary"
-          />
-          {/* <div className="w-[350px] h-[40vh]  absolute bg-red-500"></div> */}
+        {/* serch conponent */}
 
-          <button className="h-full w-[50px] text-2xl bg-orange-500 rounded-tr-[13px] rounded-br-[13px] p-2 ">
-            {" "}
-            <LuSearch />
-          </button>
-        </div>
         <div className="right">
           <ul className="list-none flex justify-center items-center gap-8 ">
             {nagationtext.map((item, index) => {
@@ -42,12 +34,28 @@ const Navbar = () => {
                 </li>
               );
             })}
+            <Search />
             <Link to="/cart">
               <IoCart className="text-3xl  hover:cursor-pointer hover:text-green-700" />
             </Link>
             <Link to="/wishlist">
               <IoMdHeart className="text-3xl  hover:cursor-pointer hover:text-green-700" />
             </Link>
+            
+              {token===null ? (
+               <Link to="/signup"> <button className="text-[16px] font-serif  bg-gray-400 rounded-md hover:cursor-pointer w-[110px] hover:border-[1px] p-1 border-lime-500 hover:text-green-700">
+                  Signup/Login
+                </button></Link>
+              ) : (
+                <button onClick={() =>{ 
+                  settoken(null)
+                  localStorage.clear()
+                  toast.success("Logout Successfully")
+                  }} className="text-[16px] font-serif bg-purple-700 rounded-md hover:cursor-pointer w-[110px] hover:border-[1px] p-1 border-lime-500 hover:text-green-700">
+                  Logout
+                </button>
+              )}
+            
           </ul>
         </div>
       </div>

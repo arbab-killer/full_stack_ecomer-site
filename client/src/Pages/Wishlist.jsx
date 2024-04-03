@@ -1,7 +1,22 @@
-
+import { useContext, useEffect, useState } from "react";
+import { Context } from "../Context";
 const Wishlist = () => {
+  const { token, settoken } = useContext(Context);
+  const [isverfy, setisverfy] = useState(false);
+  useEffect(() => {
+   if (
+    token ){
+setisverfy(true)
+    }
+  },[token, settoken])
+
   return (
-    <div>Wishlist</div>
+    <>
+    {
+      isverfy && <div>Wishlist</div>
+    }
+    </>
+   
   )
 }
 

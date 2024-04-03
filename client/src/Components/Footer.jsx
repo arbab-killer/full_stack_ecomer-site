@@ -9,6 +9,7 @@ import {
 } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { IoLogoAppleAppstore, IoLogoGooglePlaystore } from "react-icons/io5";
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div className="h-[70vh] capitalize w-full bg-[#DCD9D9]">
@@ -43,22 +44,30 @@ const Footer = () => {
           <h4 className="text-3xl">My-account</h4>
           <div>
             {" "}
-            <strong>view card</strong>
+            <strong>
+              <Link to="/cart">view card</Link>
+            </strong>
           </div>
           <div>
             {" "}
-            <strong>sign in</strong>{" "}
+            <strong>
+              <Link to="/signup">sign in</Link>
+            </strong>{" "}
           </div>
           <div>
             {" "}
-            <strong>wishlist</strong>
+            <strong>
+              <Link to="/wishlist">wishlist</Link>
+            </strong>
           </div>
           <div>
             <strong>track my order</strong>
           </div>
           <div>
             {" "}
-            <strong>help</strong>
+            <strong>
+              <Link to="/contact">help</Link>
+            </strong>
           </div>
         </div>
         <div className=" text-black flex flex-col justify-center items-left">
