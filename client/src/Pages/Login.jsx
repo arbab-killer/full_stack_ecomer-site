@@ -1,6 +1,53 @@
-import { Link } from "react-router-dom";
-
+import axios from "axios";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { Backendurl } from "../../Constant";
+import toast from "react-hot-toast";
+import { useContext } from "react";
+import { Context } from "../Context";
+import Loding from "../Components/Loding";
 const Login = () => {
+  const navigate = useNavigate();
+  const [loding, setloding] = useState(false);
+  const [user, setuser] = useState({
+    email: "",
+    password: "",
+  });
+  const {  settoken } = useContext(Context);
+
+  const onchanehandler = (e) => {
+    setuser({ ...user, [e.target.name]: e.target.value });
+  };
+
+  const loginhandler = async (e) => {
+    e.preventDefault();
+    try {
+      setloding(true);
+      const data = await axios.post(`${Backendurl}/login`, user, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      console.log(data);
+      if (localStorage.getItem) {
+        localStorage.removeItem("token");
+      }
+      await localStorage.setItem("token", data.data.token);
+      await settoken(localStorage.getItem("token"));
+      await setloding(false);
+      toast.success(data.data.message);
+      navigate("/home");
+    } catch (error) {
+      if (error.message) {
+        toast.error("wrong credentials");
+      }
+      setloding(false);
+    }
+  };
+  if (loding) {
+    return <Loding />;
+  }
+
   return (
     <>
       <div
@@ -19,13 +66,15 @@ const Login = () => {
         >
           Login to your account
         </p>
-        <form className="space-y-6">
+        <form onSubmit={loginhandler} className="space-y-6">
           <div className="relative">
             <input
               placeholder="john@example.com"
               className="peer h-10 w-full border-b-2 border-gray-300 text-white bg-transparent placeholder-transparent focus:outline-none focus:border-purple-500"
               required=""
               id="email"
+              onChange={onchanehandler}
+              value={user.email}
               name="email"
               type="email"
             />
@@ -44,6 +93,8 @@ const Login = () => {
               required=""
               id="password"
               name="password"
+              onChange={onchanehandler}
+              value={user.password}
               type="password"
             />
             <label

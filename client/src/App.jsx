@@ -17,6 +17,7 @@ import { Context } from "./Context";
 import { useState } from "react";
 import { Toaster } from "react-hot-toast";
 import Singleproduct from "./Pages/Singleproduct";
+import Try from "./Pages/Try";
 
 function App() {
   const [token, settoken] = useState(null);
@@ -35,6 +36,7 @@ function App() {
             <Route path="/login" element={<Login />} />
 
             <Route path="/home" element={<Home />} />
+            <Route path="/try" element={<Try />} />
 
             <Route path="/count" element={<Account />} />
             <Route path="/about" element={<About />} />

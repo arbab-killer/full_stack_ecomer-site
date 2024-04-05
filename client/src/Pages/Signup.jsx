@@ -25,7 +25,7 @@ const Signup = () => {
   const signupcontrolar = async (e) => {
     e.preventDefault();
     if (
-      !(user.name && user.email && user.password && user.phone && user.address)
+      !(user.name.length && user.email && user.password.length && user.phone && user.address)
     ) {
       return toast.error("All fields are required");
     }
@@ -36,6 +36,7 @@ const Signup = () => {
           "Content-Type": "application/json",
         },
       });
+      console.log(data);
       if (localStorage.getItem) {
         await localStorage.removeItem("token");
       }
@@ -45,7 +46,10 @@ const Signup = () => {
       navigate("/");
       toast.success(data.data.message);
     } catch (error) {
-      console.log(error.message);
+      if (error.message) {
+        toast.error("User AllReadyExised");
+      }
+      setloding(false);
     }
   };
 

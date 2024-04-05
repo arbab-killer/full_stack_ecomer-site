@@ -9,7 +9,7 @@ import toast from "react-hot-toast";
 const Navbar = () => {
   const { token ,settoken } = useContext(Context);
   
-  const nagationtext = ["Home", "Shop", "Blog", "About", "Contact Us"];
+  const nagationtext = ["Home", "Shop", "Blog", "About", "Contact"];
   return (
     <>
       <div className="navbar h-[15vh] shadow-lg shadow-gray-400  w-full flex items-center p-10 justify-between bg-[#F1F1F1]">
