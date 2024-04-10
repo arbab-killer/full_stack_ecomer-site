@@ -3,12 +3,17 @@ import { IoCart } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { IoMdHeart } from "react-icons/io";
 import Search from "./Search";
-import { Context } from "../Context";
-import { useContext } from "react";
+
 import toast from "react-hot-toast";
+
 const Navbar = () => {
-  const { token ,settoken } = useContext(Context);
-  
+  let showlogout;
+  if (localStorage.getItem("token")) {
+    showlogout = true;
+  }
+  if (!localStorage.getItem("token")) {
+    showlogout = false;
+  }
   const nagationtext = ["Home", "Shop", "Blog", "About", "Contact"];
   return (
     <>
@@ -41,21 +46,24 @@ const Navbar = () => {
             <Link to="/wishlist">
               <IoMdHeart className="text-3xl  hover:cursor-pointer hover:text-green-700" />
             </Link>
-            
-              {token===null ? (
-               <Link to="/signup"> <button className="text-[16px] font-serif  bg-gray-400 rounded-md hover:cursor-pointer w-[110px] hover:border-[1px] p-1 border-lime-500 hover:text-green-700">
-                  Signup/Login
-                </button></Link>
-              ) : (
-                <button onClick={() =>{ 
-                  settoken(null)
-                  localStorage.clear()
-                  toast.success("Logout Successfully")
-                  }} className="text-[16px] font-serif bg-purple-700 rounded-md hover:cursor-pointer w-[110px] hover:border-[1px] p-1 border-lime-500 hover:text-green-700">
-                  Logout
+
+            {!showlogout ? (
+              <Link to="/login">
+                <button className="text-[16px] font-serif bg-slate-400  rounded-md hover:cursor-pointer w-[110px] hover:border-[1px] p-1 border-lime-500 hover:text-green-700">
+                  Login
                 </button>
-              )}
-            
+              </Link>
+            ) : (
+              <button
+                onClick={() => {
+                  localStorage.clear("token");
+                  toast.success("Logout Successfully");
+                }}
+                className="text-[16px] font-serif bg-purple-700 rounded-md hover:cursor-pointer w-[110px] hover:border-[1px] p-1 border-lime-500 hover:text-green-700"
+              >
+                Logout
+              </button>
+            )}
           </ul>
         </div>
       </div>

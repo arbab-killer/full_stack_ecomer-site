@@ -18,14 +18,16 @@ const Card = ({ productUrl, id, productName, productPrice, productRating }) => {
         </h4>
         <div className="text-left flex items-center justify-left  font-bold mt-2 mb-2 text-2xl">
           {(() => {
+            // {console.log(productRating);}
             switch (productRating) {
-              case 1:
+              
+              case  1:
                 return (
                   <>
                     <IoStarSharp color="orange" />
                   </>
                 );
-              case 1.5:
+              case  1.5:
                 return (
                   <>
                     <IoStarSharp color="orange" />{" "}
@@ -39,7 +41,7 @@ const Card = ({ productUrl, id, productName, productPrice, productRating }) => {
                     <IoStarSharp color="orange" />
                   </>
                 );
-              case 2.5:
+              case  2.5:
                 return (
                   <>
                     <IoStarSharp color="orange" />{" "}
@@ -47,7 +49,7 @@ const Card = ({ productUrl, id, productName, productPrice, productRating }) => {
                     <IoIosStarHalf color="orange" />
                   </>
                 );
-              case 3:
+              case  3:
                 return (
                   <>
                     <IoStarSharp color="orange" />{" "}
@@ -56,7 +58,7 @@ const Card = ({ productUrl, id, productName, productPrice, productRating }) => {
                   </>
                 );
 
-              case 3.5:
+              case  3.5:
                 return (
                   <>
                     <IoStarSharp color="orange" />{" "}
@@ -65,7 +67,7 @@ const Card = ({ productUrl, id, productName, productPrice, productRating }) => {
                     <IoIosStarHalf color="orange" />
                   </>
                 );
-              case 4:
+              case  4:
                 return (
                   <>
                     <IoStarSharp color="orange" />{" "}
@@ -74,7 +76,7 @@ const Card = ({ productUrl, id, productName, productPrice, productRating }) => {
                     <IoStarSharp color="orange" />
                   </>
                 );
-              case 4.5:
+              case  4.5:
                 return (
                   <>
                     <IoStarSharp color="orange" />{" "}
@@ -111,3 +113,5 @@ const Card = ({ productUrl, id, productName, productPrice, productRating }) => {
 };
 
 export default Card;
+
+

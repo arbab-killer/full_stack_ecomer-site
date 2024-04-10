@@ -3,17 +3,16 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Backendurl } from "../../Constant";
 import toast from "react-hot-toast";
-import { useContext } from "react";
-import { Context } from "../Context";
 import Loding from "../Components/Loding";
 const Login = () => {
+  
   const navigate = useNavigate();
   const [loding, setloding] = useState(false);
   const [user, setuser] = useState({
     email: "",
     password: "",
   });
-  const {  settoken } = useContext(Context);
+  
 
   const onchanehandler = (e) => {
     setuser({ ...user, [e.target.name]: e.target.value });
@@ -33,7 +32,6 @@ const Login = () => {
         localStorage.removeItem("token");
       }
       await localStorage.setItem("token", data.data.token);
-      await settoken(localStorage.getItem("token"));
       await setloding(false);
       toast.success(data.data.message);
       navigate("/home");

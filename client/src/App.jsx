@@ -13,43 +13,40 @@ import Login from "./Pages/Login";
 import Account from "./Pages/Account";
 
 // import { ToastContainer } from "react-toastify";
-import { Context } from "./Context";
-import { useState } from "react";
+
 import { Toaster } from "react-hot-toast";
 import Singleproduct from "./Pages/Singleproduct";
 import Try from "./Pages/Try";
+import AllProducts from "./Pages/AllProducts";
+import Createproduct from "./Pages/Createproduct";
 
 function App() {
-  const [token, settoken] = useState(null);
-
   return (
     <>
       <div>
         <Toaster position="top-center" />
       </div>
       <Router>
-        <Context.Provider value={{ token, settoken }}>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="signup" element={<Signup />} />
-            <Route path="/login" element={<Login />} />
-
-            <Route path="/home" element={<Home />} />
-            <Route path="/try" element={<Try />} />
-
-            <Route path="/count" element={<Account />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contect />} />
-            <Route path="/shop" element={<Shop />} />
-            <Route path="/wishlist" element={<Wishlist />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="products/:id" element={<Singleproduct />} />
-            <Route path="/products" element={<Shop />} />
-          </Routes>
-          <Footer />
-        </Context.Provider>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/p" element={<AllProducts  />} />
+          <Route path="signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/try" element={<Try />} />
+          <Route path="/count" element={<Account />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contect />} />
+          <Route path="/shop" element={<Shop />} />
+          <Route path="/wishlist" element={<Wishlist />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="products/:id" element={<Singleproduct />} />
+          <Route path="/products" element={<Shop />} />
+          <Route path="/createproduct" element={<Createproduct />} />
+        </Routes>
+        <Footer />
       </Router>
     </>
   );

@@ -1,15 +1,12 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { useContext } from "react";
-import { Context } from "../Context";
 import { Backendurl } from "../../Constant";
 import Loding from "../Components/Loding";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 const Signup = () => {
-  const navigate = useNavigate();
-  const { settoken } = useContext(Context);
+  const navigate = useNavigate()
   const [loding, setloding] = useState(false);
   const [user, setsuser] = useState({
     name: "",
@@ -25,7 +22,13 @@ const Signup = () => {
   const signupcontrolar = async (e) => {
     e.preventDefault();
     if (
-      !(user.name.length && user.email && user.password.length && user.phone && user.address)
+      !(
+        user.name.length &&
+        user.email &&
+        user.password.length &&
+        user.phone &&
+        user.address
+      )
     ) {
       return toast.error("All fields are required");
     }
@@ -41,7 +44,6 @@ const Signup = () => {
         await localStorage.removeItem("token");
       }
       await localStorage.setItem("token", data.data.token);
-      await settoken(localStorage.getItem("token"));
       setloding(false);
       navigate("/");
       toast.success(data.data.message);
